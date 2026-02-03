@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosso Amor ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTE PACIFICO -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="inicio">
+    <button class="btn-inicio" onclick="iniciarTudo()">Clique aqui ❤️</button>
+  </div>
+
+  <div id="conteudo" class="container escondido">
+
+    <h1 class="titulo-casal">❤️ Hélder & Aline ❤️</h1>
+
+    <p class="mensagem">
+      Desde o dia em que você entrou na minha vida, tudo ganhou mais cor.
+      Obrigado por ser meu amor, minha paz e meu lar. 💕
+    </p>
+
+    <!-- CONTADOR -->
+    <div class="contador-visual">
+      <h2 id="dataInicio"></h2>
+
+      <div class="blocos-topo">
+        <div class="bloco"><span id="anos">0</span><small>Anos</small></div>
+        <div class="bloco"><span id="meses">0</span><small>Meses</small></div>
+        <div class="bloco"><span id="dias">0</span><small>Dias</small></div>
+      </div>
+
+      <div class="bloco-relogio">
+        <span id="horas">00</span> :
+        <span id="minutos">00</span> :
+        <span id="segundos">00</span>
+      </div>
+    </div>
+
+    <p class="surpresa texto-amor">
+      Nosso tempo juntos não é um destino, é um caminho.<br>
+      E eu amo percorrer cada etapa dele com você.<br>
+      Que esse número continue aumentando infinitamente<br>
+      enquanto o meu amor por você só se fortalece. 💖
+    </p>
+
+    <div class="slideshow">
+      <img id="slide" src="fotos/1.jpg">
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
