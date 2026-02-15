@@ -5,7 +5,7 @@ const slide = document.getElementById("slide");
 
 const inicioNamoro = new Date(2025, 1, 23);
 document.getElementById("dataInicio").innerText =
-  "Desde 23 de fevereiro de 2025 💕";
+  "Desde 23 de fevereiro de 2025 ♡";
 
 let fotos = [
   "fotos/1.jpg",
@@ -33,8 +33,10 @@ function iniciarTudo() {
   if (!iniciado) {
     iniciado = true;
     setInterval(trocarImagem, 3000);
+    setInterval(ativarBrilho, 10000);
   }
 }
+
 
 function animar(elemento) {
   elemento.classList.remove("pulse");
@@ -82,3 +84,63 @@ function trocarImagem() {
     slide.classList.remove("fade-out");
   }, 800);
 }
+/* ===== CORAÇÕES SUBINDO SUAVEMENTE ===== */
+
+const camadaCoracoes = document.createElement("div");
+camadaCoracoes.classList.add("coracoes");
+document.body.appendChild(camadaCoracoes);
+
+function criarCoracao() {
+  const coracao = document.createElement("div");
+  coracao.classList.add("coracao");
+  coracao.innerHTML = "❤";
+
+
+  coracao.style.left = Math.random() * 100 + "vw";
+  coracao.style.fontSize = (14 + Math.random() * 20) + "px";
+  coracao.style.animationDuration = (6 + Math.random() * 4) + "s";
+
+  camadaCoracoes.appendChild(coracao);
+
+  setTimeout(() => {
+    coracao.remove();
+  }, 10000);
+}
+
+setInterval(criarCoracao, 900);
+/* ===== BRILHO SUAVE AUTOMÁTICO ===== */
+
+function ativarBrilho() {
+  conteudo.classList.remove("brilho");
+  void conteudo.offsetWidth; // força reinício da animação
+  conteudo.classList.add("brilho");
+
+  setTimeout(() => {
+    conteudo.classList.remove("brilho");
+  }, 3500);
+}
+
+/* ===== ESTRELINHAS RARAS ===== */
+
+function criarEstrela() {
+  const estrela = document.createElement("div");
+  estrela.classList.add("estrela");
+  estrela.innerHTML = "✦";
+
+  estrela.style.left = Math.random() * 100 + "vw";
+  estrela.style.top = Math.random() * 100 + "vh";
+  estrela.style.fontSize = (6 + Math.random() * 8) + "px";
+
+  document.body.appendChild(estrela);
+
+  setTimeout(() => {
+    estrela.remove();
+  }, 4000);
+}
+
+// aparecem raramente
+setInterval(() => {
+  if (Math.random() < 0.4) { 
+    criarEstrela();
+  }
+}, 4000);
