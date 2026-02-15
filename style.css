@@ -171,3 +171,112 @@ body {
     font-size: 28px;
   }
 }
+/* ===== CORAÇÕES FLUTUANDO ===== */
+
+.coracoes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.coracao {
+  position: absolute;
+  bottom: -30px;
+  font-size: 20px;
+  animation: subir linear forwards;
+  opacity: 0.35;
+  color: #cdd6ff;
+  text-shadow: 0 0 10px rgba(180, 190, 255, 0.6);
+}
+
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+/* ===== BRILHO SUAVE ULTRA DELICADO ===== */
+
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.04),
+    transparent
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.container.brilho::after {
+  animation: brilhoPassando 3.5s ease;
+}
+
+@keyframes brilhoPassando {
+  0% {
+    left: -150%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+/* ===== Texto de baixo flutuando bem devagar ===== */
+.texto-amor {
+  animation: flutuar 6s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== ESTRELINHAS SUAVES ===== */
+
+.estrela {
+  position: absolute;
+  font-size: 10px;
+  color: #cdd6ff;
+  opacity: 0;
+  pointer-events: none;
+  animation: brilhar 4s ease-in-out forwards;
+  text-shadow: 0 0 8px rgba(200, 210, 255, 0.6);
+}
+
+@keyframes brilhar {
+  0% { opacity: 0; transform: scale(0.5); }
+  20% { opacity: 0.8; transform: scale(1); }
+  80% { opacity: 0.8; }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
